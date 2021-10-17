@@ -318,6 +318,8 @@ def stream(link, quality, file, resume, playonly, fs):
             stream  = subprocess.run(['mpv', f'--ytdl-format={quality}/best', link, fs, resume, '--loop-playlist=no', rec, '--player-operation-mode=pseudo-gui'])
             if stream.returncode != 0:
                 print(''); menu.con_err()
+            else:
+                print('\n')
             exit()
         else:
             rec     = f'--stream-record={file}'

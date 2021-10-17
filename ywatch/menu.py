@@ -249,7 +249,7 @@ def checker(listt, size, item, name):
         return name
 
 
-def play(choice, size, mkv, video_quality):
+def play(choice, size, mkv, video_quality, playonly):
     aac = video_quality.get('aac')
     opus = video_quality.get('opus')
 
@@ -300,7 +300,7 @@ def play(choice, size, mkv, video_quality):
     elif choice == 'w': 
         qInfo = f'[{r}]Worst[/{r}]'
         if mkv:
-            qPlay = 'worstvideo[ext=webm]+worstaudio[ext=webm]'
+            qPlay = 'worstvideo[ext=webm]+worstaudio[ext=webm]/worst'
         else:
             qPlay = 'worst'
 
@@ -388,20 +388,21 @@ def play(choice, size, mkv, video_quality):
         else:
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]best[/{lg}]')
 
-    if size:
-        if choice == 'o' or choice == 'O':
-            rprint(f'[{w}]OUTPUT:[/{w}] [{b}]opus[/{b}]')
-        elif choice == 'a':
-            rprint(f'[{w}]OUTPUT:[/{w}] [{b}]aac[/{b}]')
-        elif mkv:
-            rprint(f'[{w}]OUTPUT:[/{w}] [{b}]mkv[/{b}]')
+    if not playonly:
+        if size:
+            if choice == 'o' or choice == 'O':
+                rprint(f'[{w}]OUTPUT:[/{w}] [{b}]opus[/{b}]')
+            elif choice == 'a':
+                rprint(f'[{w}]OUTPUT:[/{w}] [{b}]aac[/{b}]')
+            elif mkv:
+                rprint(f'[{w}]OUTPUT:[/{w}] [{b}]mkv[/{b}]')
+            else:
+                rprint(f'[{w}]OUTPUT:[/{w}] [{yo}]mp4[/{yo}]')
         else:
-            rprint(f'[{w}]OUTPUT:[/{w}] [{yo}]mp4[/{yo}]')
-    else:
-        if mkv:
-            rprint(f'[{w}]OUTPUT:[/{w}][s {r}]mkv[/s {r}] [{yo}]mp4[/{yo}]')
-        else:
-            rprint(f'[{w}]OUTPUT:[/{w}] [{yo}]mp4[/{yo}]')
+            if mkv:
+                rprint(f'[{w}]OUTPUT:[/{w}][s {r}]mkv[/s {r}] [{yo}]mp4[/{yo}]')
+            else:
+                rprint(f'[{w}]OUTPUT:[/{w}] [{yo}]mp4[/{yo}]')
 
     return qPlay
 

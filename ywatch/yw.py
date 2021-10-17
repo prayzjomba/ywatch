@@ -127,7 +127,7 @@ if userIn.size:
 
 
 size_true = size_true()
-quality = menu.play(userIn.Quality, size_true, userIn.mkv, video_quality())
+quality = menu.play(userIn.Quality, size_true, userIn.mkv, video_quality(), userIn.playonly)
 
 
 # DATE
@@ -227,5 +227,5 @@ if userIn.watch:
     subprocess.Popen(['mpv', fs, file, '--loop-playlist', '--player-operation-mode=pseudo-gui'])
 
 
-
+exit()
 #END
