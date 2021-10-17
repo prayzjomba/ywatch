@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
 # (yw) YOUTUBE-WATCH (Prayz Jomba)
-#           >>>VERSION (0.6)<<<
+#           >>>VERSION (0.6.1)<<<
 #
 
 # APP
-ver = '0.6'
+ver = '0.6.1'
 apn = 'yWatch'
 
 
@@ -24,9 +24,6 @@ user_q  = userIn.Quality
 dataFile = dataprocess.dataFile
 link = dataprocess.link
 
-# CLEAR SCREEN
-if not userIn.disable_clear: #-c
-    os.system('clear')
 
 # FULL SCREEN
 if userIn.fullscreen: #-f
@@ -37,10 +34,10 @@ else:
 
 # FUNCTIONS
 def menu_version():
-    if userIn.disable_bar:   #-b
-        print('')
-    else:
+    if userIn.bar:   #-b
         menu.version(apn, ver)
+    else:
+        print('')
 
 def menu_title():
     menu.title(link, title)
@@ -89,6 +86,15 @@ def live_formats():
 def stream():
     dataprocess.stream(link, quality, file, resume, userIn.playonly, fs)
 
+
+# VERSION
+if userIn.version:
+    menu.version(apn, ver)
+    exit()
+
+# CLEAR SCREEN
+if not userIn.disable_clear: #-c
+    os.system('clear')
 
 # CONDITIONS
 if not os.path.isfile(dataFile):
