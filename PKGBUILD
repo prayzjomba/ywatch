@@ -11,16 +11,16 @@ makedepends=('git' 'make' 'python-setuptools')
 provides=(yw)
 install=
 changelog=
-source=("git+$url")
+source=("$pkgname-$pkgver"::"git+$url")
 md5sums=('SKIP')
 
 build() {
-	cd "$pkgname"
+	cd "$pkgname-$pkgver"
 	python setup.py build
 }
 
 
 package() {
-	cd "$pkgname"
+	cd "$pkgname-$pkgver"
 	python setup.py install --root="$pkgdir" --optimize=1
 }
