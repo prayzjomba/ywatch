@@ -2,7 +2,7 @@
 #   last updated(01 Sep 2021) 12:49:20 PM
 
 
-import clipboard
+import pyperclip
 from rich.panel import Panel
 from rich.padding import Padding
 from rich import print as rprint
@@ -17,7 +17,7 @@ bdr         = 'color(9)'
 
 
 # LINK CHECK
-link = clipboard.paste()
+link = pyperclip.paste()
 link = ''.join(link.split() [:1])
 
 
