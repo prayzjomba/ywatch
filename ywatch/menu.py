@@ -1,5 +1,5 @@
 # MENU by (Prayz Jomba)
-# last updated(10 Sep 2021) 11:13:18 AM
+# last updated(18 Sep 2021) 04:43:28 PM
 
 
 from rich.panel import Panel
@@ -8,15 +8,15 @@ from rich import print as rprint
 
 
 # COLORS
-r   = 'color(9)'        #red
-lg  = 'color(112)'      #light green
-tc  = 'color(155)'      #lightest green 
-w   = 'color(254)'      #white
+r   = 'b color(9)'      #red
+lg  = 'b color(112)'    #light green
+tc  = 'b color(155)'    #lightest green 
+w   = 'b color(254)'    #white
 g   = 'b color(46)'     #green
-b   = 'color(80)'       #blue
-aq   = 'color(78)'      #aqua
+b   = 'b color(80)'     #blue
+aq  = 'b color(78)'     #aqua
 y   = 'b color(190)'    #yellow
-pu  = 'color(169)'      #purple
+pu  = 'b color(169)'    #purple
 br  = 'b color(172)'    #brown
 yo  = 'b color(220)'    #yellow/orange
 ly  = 'b color(215)'    #light yellow
@@ -32,17 +32,13 @@ def age_err():
 
 def tim_err(link):
     ce = Panel.fit(f"[{yo}]Check Your LINK[/{yo}]", border_style = yo)
-    lk = f'[b {w}]{link} [/b {w}]'
+    lk = f'[{w}]{link} [/{w}]'
     rprint(Padding(ce, (0, 30)))
     rprint(Padding(lk, (0, 18)))
 
 def usr_err():
     ce = Panel.fit(f"[{yo}]You Killed Me [/{yo}]", border_style = yo)
     rprint(Padding(ce, (0, 30)))
-
-def title(link, title):
-    title   = f"[b {w}]TITLE:[/b {w}] [{tc}]{title}[/{tc}]"
-    rprint(f'{title} \n{link}')
 
 def version(apn, ver):
     ap_name = f'[{br}]{apn}[/{br}]'
@@ -52,8 +48,8 @@ def version(apn, ver):
     rprint(Padding(version, (0,20)))
 
 def title(link, title):
-    link    = f'[b {w}]LINK: {link} [/b {w}]'
-    title   = f"[b {w}]TITLE:[/b {w}] [{tc}]{title}[/{tc}]"
+    link    = f'[{w}]LINK: {link} [/{w}]'
+    title   = f"[{w}]TITLE:[/{w}] [{tc}]{title}[/{tc}]"
     rprint(f'{title} \n{link}')
 
 def bestQ(quality):
@@ -75,9 +71,9 @@ def duration_asize(duration, aac, opus):
             return sizeN+sizeT
     s_aac = s(aac)
     s_opus = s(opus)
-    duration = f'[b {w}]DURATION:[/b {w}][{ly}] ([i {lg}]{duration}[/i {lg}])[/{ly}]'
-    A = f'[b {b}]AAC:[/b {b}] [b {lg}]{s_aac}[/b {lg}]'
-    O = f'[b {aq}]OPUS:[/b {aq}] [b {lg}]{s_opus}[/b {lg}]'
+    duration = f'[{w}]DURATION:[/{w}][{ly}] ([i {lg}]{duration}[/i {lg}])[/{ly}]'
+    A = f'[{b}]AAC:[/{b}] [{lg}]{s_aac}[/{lg}]'
+    O = f'[{aq}]OPUS:[/{aq}] [{lg}]{s_opus}[/{lg}]'
 
     #print(len(duration))
     #print(len(A))
@@ -119,7 +115,7 @@ def clr_size(name, size):
         size = size.split()
         ss = size[0]
         st = size[1]
-        ss = f'[b {lg}]{ss}[/b {lg}]'
+        ss = f'[{lg}]{ss}[/{lg}]'
         if 'G' in st:
             st = f'[{pu}]{st}[/{pu}]'
         else:
@@ -162,46 +158,46 @@ def lens(size):
 def data(fmat, qsize):
     qlen = len(qsize)
     if qlen == 1:
-        rprint(f'[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}[/{ly}]\n')
+        rprint(f'[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}[/{ly}]\n')
     elif qlen == 2:
-        rprint(f'[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}[/{ly}]\n')
+        rprint(f'[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}[/{ly}]\n')
     elif qlen == 3:
-        rprint(f'[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}[/{ly}]\n')
+        rprint(f'[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}[/{ly}]\n')
     elif qlen == 4:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}[/{ly}]\n''')
     elif qlen == 5:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}| {qsize[4]}[/{ly}]\n''')
     elif qlen == 6:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}| {qsize[4]}| {qsize[5]}[/{ly}]\n''')
     elif qlen == 7:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}| {qsize[4]}| {qsize[5]}
      {qsize[6]}[/{ly}]\n''')
     elif qlen == 8:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}| {qsize[4]}| {qsize[5]}
      {qsize[6]}| {qsize[7]}[/{ly}]\n''')
     elif qlen == 9:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}| {qsize[4]}| {qsize[5]}
      {qsize[6]}| {qsize[7]}| {qsize[8]}[/{ly}]\n''')
     elif qlen == 10:
-        rprint(f'''[b {w}]{fmat}:[/b {w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
+        rprint(f'''[{w}]{fmat}:[/{w}][{ly}] {qsize[0]}| {qsize[1]}| {qsize[2]}
      {qsize[3]}| {qsize[4]}| {qsize[5]}
      {qsize[6]}| {qsize[7]}| {qsize[8]}
      {qsize[9]}[/{ly}]\n''')
 
 
 def live():
-    live = Panel.fit(f'[{w}]This Video is [{br}]LIVE[/{br}]',border_style = br)
+    live = Panel.fit(f'[{w}]This Video is [{br}]LIVE[/{br}][/{w}]',border_style = br)
     rprint(Padding(live, (0,27)))
 
 def premier(duration):
     premier = Panel.fit(f'[{br}]PREMIERING NOW[/{br}]', border_style = br)
-    duration = f'[b {w}]DURATION:[/b {w}][{ly}] ([i {lg}]{duration}[/i {lg}])[/{ly}]'
+    duration = f'[{w}]DURATION:[/{w}] ([i {lg}]{duration}[/i {lg}])'
     rprint(f'{duration}')
     rprint(Padding(premier, (0, 30)))
 
@@ -220,7 +216,7 @@ def liveFormats(formats):
     if 96 in fList:
         fList[fList.index(96)] = f'[{br}]1080p[/{br}]'
 
-    lv = f'[b {w}]LIVE:[/b {w}][{y}]'
+    lv = f'[{w}]LIVE:[/{w}][{y}]'
     if LL == 1:
         rprint(f'{lv} {fList[0]}[/{y}]')
     elif LL == 2:
