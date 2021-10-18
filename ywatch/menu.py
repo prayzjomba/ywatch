@@ -79,24 +79,24 @@ def duration_asize(duration, aac, opus):
     #print(len(A))
 
     #dur_len
-    if   len(duration) == 103: duration += '        '
-    elif len(duration) == 104: duration += '       '
-    elif len(duration) == 106: duration += '     '
-    elif len(duration) == 107: duration += '    '
-    elif len(duration) == 108: duration += '   '
+    if   len(duration) == 107: duration += '        '
+    elif len(duration) == 108: duration += '       '
+    elif len(duration) == 110: duration += '     '
+    elif len(duration) == 111: duration += '    '
+    elif len(duration) == 112: duration += '   '
 
     #aac_len
-    if   len(A) == 87: A += '         '
-    elif len(A) == 116: A += '         '
-    elif len(A) == 117: A += '        '
-    elif len(A) == 118: A += '       '
-    elif len(A) == 119: A += '      '
-    elif len(A) == 122: A += '       '
-    elif len(A) == 123: A += '      '
-    elif len(A) == 124: A += '     '
-    elif len(A) == 125: A += '    '
+    if   len(A) == 95: A += '         '
+    elif len(A) == 124: A += '         '
+    elif len(A) == 125: A += '        '
+    elif len(A) == 126: A += '       '
+    elif len(A) == 127: A += '      '
+    elif len(A) == 130: A += '       '
+    elif len(A) == 131: A += '      '
+    elif len(A) == 132: A += '     '
+    elif len(A) == 133: A += '    '
     #print(len(A), len(O), len(duration))
-    rprint(f'{duration}| {A}| {O}\n')
+    rprint(f'[{ly}]{duration}| {A}| {O}[/{ly}]\n')
 
 
 def clr_size(name, size):
