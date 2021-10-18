@@ -91,6 +91,7 @@ def duration_asize(duration, aac, opus):
     elif len(A) == 125: A += '        '
     elif len(A) == 126: A += '       '
     elif len(A) == 127: A += '      '
+    elif len(A) == 128: A += '     '
     elif len(A) == 130: A += '       '
     elif len(A) == 131: A += '      '
     elif len(A) == 132: A += '     '
