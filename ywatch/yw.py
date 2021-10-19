@@ -11,7 +11,7 @@ apn = 'yWatch'
 
 # IMPORTS
 import os, subprocess
-from ywatch import userInputs, dataprocess, menu
+from ywatch import userInputs, menu
 from datetime import date
 
 
@@ -19,11 +19,16 @@ from datetime import date
 userIn  = userInputs.args
 user_q  = userIn.Quality
 
+# VERSION
+if userIn.version:
+    menu.version(apn, ver)
+    exit()
+
+from ywatch import dataprocess
 
 # DATA FILE
 dataFile = dataprocess.dataFile
 link = dataprocess.link
-
 
 # FULL SCREEN
 if userIn.fullscreen: #-f
@@ -86,11 +91,6 @@ def live_formats():
 def stream():
     dataprocess.stream(link, quality, file, resume, userIn.playonly, fs)
 
-
-# VERSION
-if userIn.version:
-    menu.version(apn, ver)
-    exit()
 
 # CLEAR SCREEN
 if not userIn.disable_clear: #-c
