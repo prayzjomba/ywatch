@@ -374,6 +374,7 @@ def play(choice, size, mkv, video_quality, playonly):
 
     else: 
         qPlay = f'{bq()}'
+        choice = None
 
     if choice:
         rprint(f'[{w}]PLAYING:[/{w}] [{lg}]{qInfo}[/{lg}]')
