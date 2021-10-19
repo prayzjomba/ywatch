@@ -135,8 +135,8 @@ def clr_size(name, size):
 
 
 def lens(size):
-    if   len(size) == 62: size += '       '
-    elif len(size) == 63: size += '      '
+    if   len(size) == 66: size += '       '
+    elif len(size) == 67: size += '      '
     elif len(size) == 97: size += '     '
     elif len(size) == 98: size += '    '
     elif len(size) == 99: size += '   '
