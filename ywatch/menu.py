@@ -299,7 +299,7 @@ def play(choice, size, mkv, video_quality, playonly):
         if mkv:
             qPlay = 'worstvideo[ext=webm]+worstaudio[ext=webm]/worst'
         else:
-            qPlay = 'worst'
+            qPlay = 'worstvideo[ext=mp4]+worstaudio[ext=m4a]/worst'
 
     elif choice == '1' or choice == '8':
         if mkv:
