@@ -97,7 +97,7 @@ def duration_asize(duration, aac, opus):
     elif len(A) == 132: A += '     '
     elif len(A) == 133: A += '    '
     #print(len(A), len(O), len(duration))
-    rprint(f'[{ly}]{duration}| {A}| {O}[/{ly}]\n')
+    rprint(f'{duration}[{ly}]| {A}| {O}[/{ly}]\n')
 
 
 def clr_size(name, size):
