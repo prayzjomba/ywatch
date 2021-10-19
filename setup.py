@@ -6,7 +6,7 @@ LICENSE="GPLv3+"
 
 setup(
     name="ywatch",
-    version="0.6.2",
+    version="0.6.3",
     author="Prayz Jomba",
     license=LICENSE,
     author_email="prayzjomba@protonmail.com",

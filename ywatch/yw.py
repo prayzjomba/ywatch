@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
 # (yw) YOUTUBE-WATCH (Prayz Jomba)
-#           >>>VERSION (0.6.2)<<<
+#           >>>VERSION (0.6.3)<<<
 #
 
 # APP
-ver = '0.6.2'
+ver = '0.6.3'
 apn = 'yWatch'
 
 

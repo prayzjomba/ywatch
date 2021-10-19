@@ -1,6 +1,6 @@
 # Maintainer: Prayz Jomba <prayzjomba@protonmail.com>
 pkgname=ywatch
-pkgver=0.6.2
+pkgver=0.6.3
 pkgrel=1
 pkgdesc="Watch youtube videos with mpv while saving the video to disk."
 arch=(any)

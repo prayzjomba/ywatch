@@ -4,7 +4,9 @@
 
 from rich.panel import Panel
 from rich.padding import Padding
+from rich.console import Console
 from rich import print as rprint
+rinput = Console().input
 
 
 # COLORS
@@ -246,6 +248,7 @@ def checker(listt, size, item, name):
         return name
 
 
+
 def play(choice, size, mkv, video_quality, playonly):
     aac = video_quality.get('aac')
     opus = video_quality.get('opus')
@@ -266,6 +269,19 @@ def play(choice, size, mkv, video_quality, playonly):
             else:
                 return '94/93/best'
             
+
+    if not choice:
+        def na(n): return f'[{lg}]{n}[/{lg}]'
+
+        n1 = na(1); n2 = na(2); n3 = na(3); n4 = na(4); n7 = na(7); n9 = na('[9]'); n0 = na('[0]')
+        s = f'[{ly}]|[/{ly}]' ; nb = na('b'); nw = na('w')
+        rprint(f'[{br}]{nb}est {s} {nw}orst {s} {n1}080p {s} {n2}40p {s} {n3}60p {s} {n4}80p {s} {n7}20p {s} {n9}1440p {s} {n0}2160p [/{br}]')
+
+        try:
+            choice = rinput(f'[{w}]QUALITY: ')
+        except KeyboardInterrupt:
+            print(''); usr_err()
+            exit()
 
     if choice == 'a':
         if aac:
