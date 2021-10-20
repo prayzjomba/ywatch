@@ -290,9 +290,9 @@ def play(choice, size, mkv, video_quality, playonly):
 
     if choice == 'a':
         if aac:
-            qInfo = 'Audio'
+            qInfo = 'm4a'
         else:
-            qInfo = f'[s {r}]AAC[/s {r}] 480p (DEFAULT)'
+            qInfo = f'[s {r}]m4a[/s {r}] 480p (DEFAULT)'
         qPlay = aac
     elif choice == 'o':
         if opus:
