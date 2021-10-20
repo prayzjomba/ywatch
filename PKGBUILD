@@ -11,7 +11,7 @@ makedepends=('git' 'make' 'python-setuptools')
 provides=(yw)
 install=
 changelog=
-source=("$pkgname-$pkgver"::"git+$url")
+source=("$pkgname-$pkgver"::"git+$url#branch=$pkgver")
 md5sums=('SKIP')
 
 build() {
