@@ -278,7 +278,7 @@ def play(choice, size, mkv, video_quality, playonly):
         rprint(f'[{br}]{nb}est {s} {nw}orst {s} {n1}080p {s} {n2}40p {s} {n3}60p {s} {n4}80p {s} {n7}20p {s} {n9}1440p {s} {n0}2160p [/{br}]')
 
         try:
-            choice = rinput(f'[{w}]QUALITY:[{pu}](twice for mkv)[/{pu}][{ly}] > ')
+            choice = rinput(f'[{w}]QUALITY:[{b}](twice for mkv)[/{b}][{ly}] > ')
             if choice:
                 if choice.count(choice[0]) == 2 and len(choice) == 2:
                     choice = choice[0]
