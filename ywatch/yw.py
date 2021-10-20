@@ -135,6 +135,11 @@ if userIn.size:
 size_true = size_true()
 quality = menu.play(userIn.Quality, size_true, userIn.mkv, video_quality(), userIn.playonly)
 
+if not user_q:
+    user_q = quality[1]
+    userIn.mkv = quality[2]
+quality = quality[0]
+
 
 # DATE
 date  = date.today()

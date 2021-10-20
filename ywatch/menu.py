@@ -74,7 +74,7 @@ def duration_asize(duration, aac, opus):
     s_aac = s(aac)
     s_opus = s(opus)
     duration = f'[{w}]DURATION:[/{w}][{ly}] ([i {lg}]{duration}[/i {lg}])[/{ly}]'
-    A = f'[{b}]AAC:[/{b}] [{lg}]{s_aac}[/{lg}]'
+    A = f'[{b}]M4A:[/{b}] [{lg}]{s_aac}[/{lg}]'
     O = f'[{aq}]OPUS:[/{aq}] [{lg}]{s_opus}[/{lg}]'
 
     #print(len(duration))
@@ -280,7 +280,7 @@ def play(choice, size, mkv, video_quality, playonly):
         try:
             choice = rinput(f'[{w}]QUALITY:[{pu}](twice for mkv)[/{pu}][{ly}] > ')
             if choice:
-                if choice.count(choice[0]) == 2:
+                if choice.count(choice[0]) == 2 and len(choice) == 2:
                     choice = choice[0]
                     mkv = True
 
@@ -412,7 +412,7 @@ def play(choice, size, mkv, video_quality, playonly):
             if choice == 'o' or choice == 'O':
                 rprint(f'[{w}]OUTPUT:[/{w}] [{b}]opus[/{b}]')
             elif choice == 'a':
-                rprint(f'[{w}]OUTPUT:[/{w}] [{b}]aac[/{b}]')
+                rprint(f'[{w}]OUTPUT:[/{w}] [{b}]m4a[/{b}]')
             elif mkv:
                 rprint(f'[{w}]OUTPUT:[/{w}] [{b}]mkv[/{b}]')
             else:
@@ -423,7 +423,7 @@ def play(choice, size, mkv, video_quality, playonly):
             else:
                 rprint(f'[{w}]OUTPUT:[/{w}] [{yo}]mp4[/{yo}]')
 
-    return qPlay
+    return qPlay, choice, mkv
 
 
 
