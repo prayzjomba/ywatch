@@ -279,9 +279,10 @@ def play(choice, size, mkv, video_quality, playonly):
 
         try:
             choice = rinput(f'[{w}]QUALITY:[{pu}](twice for mkv)[/{pu}][{ly}] > ')
-            if choice.count(choice[0]) == 2:
-                choice = choice[0]
-                mkv = True
+            if choice:
+                if choice.count(choice[0]) == 2:
+                    choice = choice[0]
+                    mkv = True
 
         except KeyboardInterrupt:
             print(''); usr_err()
