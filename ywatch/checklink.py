@@ -13,7 +13,7 @@ from rich import print as rprint
 clink       = '[b color(112)]LINK[/b color(112)]'
 notfound    = '[b color(254)]not found[/b color(254)]'
 invalid     = '[b color(220)]Invalid[/b color(220)]'
-bdr         = 'color(9)'
+bdr         = '[b color(9)]'
 
 
 # LINK CHECK
