@@ -26,7 +26,7 @@ setup(
     ],
 
     packages=find_packages(),
-    install_requires=['rich', 'pyperclip'],
+    install_requires=['func-timeout', 'rich', 'pyperclip'],
     entry_points={'console_scripts': ['yw=ywatch:yw']},
     python_requires=">=3.6",
 )

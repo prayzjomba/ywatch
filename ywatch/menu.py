@@ -7,6 +7,7 @@ from rich.padding import Padding
 from rich.console import Console
 from rich import print as rprint
 rinput = Console().input
+from func_timeout import FunctionTimedOut, func_timeout
 
 
 # COLORS
@@ -278,7 +279,10 @@ def play(choice, size, mkv, video_quality, playonly):
         rprint(f'[{br}]{nb}est {s} {nw}orst {s} {n1}080p {s} {n2}40p {s} {n3}60p {s} {n4}80p {s} {n7}20p {s} {n9}1440p {s} {n0}2160p [/{br}]')
 
         try:
-            choice = rinput(f'[{w}]QUALITY:[{b}](twice for mkv)[/{b}][{ly}] > ')
+            try:
+                choice = func_timeout(20, lambda: rinput(f'[{w}]QUALITY:[{b}](twice for mkv)[/{b}][{ly}] > '))
+            except FunctionTimedOut:
+                print('')
             if choice:
                 if choice.count(choice[0]) == 2 and len(choice) == 2:
                     choice = choice[0]
