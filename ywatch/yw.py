@@ -235,7 +235,7 @@ if file.endswith('ts'):
 
 #OPEN
 if userIn.watch:
-    subprocess.Popen(['mpv', fs, file, '--loop-playlist', '--player-operation-mode=pseudo-gui', '--autofit=30%'])
+    subprocess.Popen(['mpv', fs, file, '--loop-playlist', '--player-operation-mode=pseudo-gui', '--autofit-larger=30%'])
 
 
 exit()
