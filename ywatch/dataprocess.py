@@ -340,7 +340,11 @@ def stream(link, quality, file, resume, playonly, fs):
             while x:
                 fsize = os.path.getsize(file)
                 fsize = round(fsize * 0.000001, 1)
-                print(f'\rSize = {fsize}(MB)', end='')
+                if fsize > 1000:
+                    fsize = round(fsize * 0.01, 2)
+                    print(f'\rSize: {fsize}(GB)', end='')
+                else:
+                    print(f'\rSize: {fsize}(MB)', end='')
                 if stream.poll() is not None:
                     print('\n')
                     x = False
