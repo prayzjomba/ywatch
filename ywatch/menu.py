@@ -201,7 +201,7 @@ def live():
 
 def premier(duration):
     premier = Panel.fit(f'[{br}]PREMIERING NOW[/{br}]', border_style = br)
-    duration = f'[{w}]DURATION:[/{w}] ([i {lg}]{duration}[/i {lg}])'
+    duration = f'[{w}]DURATION:[/{w}][{ly}] ([i {lg}]{duration}[/i {lg}])[/{ly}]'
     rprint(f'{duration}')
     rprint(Padding(premier, (0, 30)))
 
