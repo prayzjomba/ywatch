@@ -206,6 +206,7 @@ def premier(duration):
     rprint(Padding(premier, (0, 30)))
 
 def liveFormats(formats):
+    global fList
     fList = [i for i in formats if i is not None]
     LL = len(fList)
 
@@ -246,7 +247,16 @@ def checker(listt, size, item, name):
             else:
                 return f'[s {r}]{name}[/s {r}] best'
     else:
-        return name
+        result = bool([i for i in listt if item in i])
+        if result:
+            return name
+        else:
+            if bool([i for i in listt if '480p' in i]):
+                return f'[s {r}]{name}[/s {r}] 480p'
+            elif bool([i for i in listt if '360p' in i]):
+                return f'[s {r}]{name}[/s {r}] 360p'
+            else:
+                return f'[s {r}]{name}[/s {r}] best'
 
 
 
@@ -270,6 +280,22 @@ def play(choice, size, mkv, video_quality, playonly):
             else:
                 return '94/93/best'
             
+
+    def qqquality(mkvC, mp4C, name, LQ):
+        if size:
+            if mkv:
+                qInfo = checker(video_quality, size, mkvC, name)
+                vid = video_quality.get(mkvC)
+                qPlay = f'{vid}+{opus}/{bq()}'
+            else:
+                qInfo = checker(video_quality, size, mp4C, name)
+                vid = video_quality.get(mp4C)
+                qPlay = f'{vid}+{aac}/{bq()}'
+        else:
+            qInfo = checker(fList, size, name, name)
+            qPlay = f'{LQ}/{bq()}'
+        return qInfo, qPlay
+
 
     if not choice:
         def na(n): return f'[{lg}]{n}[/{lg}]'
@@ -327,75 +353,39 @@ def play(choice, size, mkv, video_quality, playonly):
             qPlay = 'worstvideo[ext=mp4]+worstaudio[ext=m4a]/worst'
 
     elif choice == '1' or choice == '8':
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_1080', '1080p')
-            vid = video_quality.get('mkv_1080')
-            qPlay = f'96/{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_1080', '1080p')
-            vid = video_quality.get('mp4_1080')
-            qPlay = f'96/{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_1080', 'mp4_1080', '1080p', '96')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == '2': 
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_240', '240p')
-            vid = video_quality.get('mkv_240')
-            qPlay = f'92/{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_240', '240p')
-            vid = video_quality.get('mp4_240')
-            qPlay = f'92/{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_240', 'mp4_240', '240p', '92')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == '3': 
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_360', '360p')
-            vid = video_quality.get('mkv_360')
-            qPlay = f'93/{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_360', '360p')
-            vid = video_quality.get('mp4_360')
-            qPlay = f'93/{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_360', 'mp4_360', '360p', '93')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == '4': 
-        qInfo = '480p'
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_480', '480p')
-            vid = video_quality.get('mkv_480')
-            qPlay = f'94/{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_480', '480p')
-            vid = video_quality.get('mp4_480')
-            qPlay = f'94/{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_480', 'mp4_480', '480p', '94')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == '7':
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_720', '720p')
-            vid = video_quality.get('mkv_720')
-            qPlay = f'95/{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_720', '720p')
-            vid = video_quality.get('mp4_720')
-            qPlay = f'95/{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_720', 'mp4_720', '720p', '95')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == '9':
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_1440', '1440p')
-            vid = video_quality.get('mkv_1440')
-            qPlay = f'{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_1440', '1440p')
-            vid = video_quality.get('mp4_1440')
-            qPlay = f'{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_1440', 'mp4_1440', '1440p', '00')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == '0':
-        if mkv:
-            qInfo = checker(video_quality, size, 'mkv_2160', '2160p')
-            vid = video_quality.get('mkv_2160')
-            qPlay = f'{vid}+{opus}/{bq()}'
-        else:
-            qInfo = checker(video_quality, size, 'mp4_2160', '2160p')
-            vid = video_quality.get('mp4_2160')
-            qPlay = f'{vid}+{aac}/{bq()}'
+        chkd = qqquality('mkv_2160', 'mp4_2160', '2160p', '00')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     else: 
         qPlay = f'{bq()}'
@@ -404,9 +394,9 @@ def play(choice, size, mkv, video_quality, playonly):
     if choice:
         rprint(f'[{w}]PLAYING:[/{w}] [{lg}]{qInfo}[/{lg}]')
     else:
-        if bool([i for i in video_quality if i.endswith('480')]):
+        if bool([i for i in video_quality if i.endswith('480')]) or bool([i for i in fList if '480p' in i]):
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]480p (DEFAULT)[/{lg}]')
-        elif bool([i for i in video_quality if i.endswith('360')]):
+        elif bool([i for i in video_quality if i.endswith('360')]) or bool([i for i in fList if '360p' in i]):
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]360p[/{lg}]')
         else:
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]best[/{lg}]')
