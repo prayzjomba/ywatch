@@ -1,5 +1,5 @@
 # INPUTS by (Prayz Jomba)
-# last updated(11 Oct 2021) 02:03:05 PM
+# last updated(21 Oct 2021) 01:10:10 PM
 
 import argparse
 
@@ -10,7 +10,7 @@ par.add_argument('Quality', nargs='?', help=
 '''
 1/8 = 1080p | 2 = 240p  | 3 = 360p  | 4 = 480p
 7 = 720p    | 9 = 1440p | 0 = 2160p    
-w = worst   | b = best  | a = audio(aac)
+w = worst   | b = best  | a = audio(m4a)
 o = audio(opus)  | O = audio(Best Opus)
 default is 480p''')
 
