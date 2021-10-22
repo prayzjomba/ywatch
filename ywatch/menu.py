@@ -302,7 +302,7 @@ def play(choice, size, mkv, video_quality, playonly):
 
         n1 = na(1); n2 = na(2); n3 = na(3); n4 = na(4); n7 = na(7); n9 = na('[9]'); n0 = na('[0]')
         s = f'[{ly}]-[/{ly}]' ; nb = na('b'); nw = na('w')
-        rprint(f'[{br}]{nb}est {s} {nw}orst {s} {n1}080p {s} {n2}40p {s} {n3}60p {s} {n4}80p {s} {n7}20p {s} {n9}1440p {s} {n0}2160p [/{br}]')
+        rprint(f'{nb}[{br}]est {s} {nw}orst {s} {n1}080p {s} {n2}40p {s} {n3}60p {s} {n4}80p {s} {n7}20p {s} {n9}1440p {s} {n0}2160p [/{br}]')
 
         try:
             try:
