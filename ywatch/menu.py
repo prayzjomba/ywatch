@@ -394,9 +394,13 @@ def play(choice, size, mkv, video_quality, playonly):
     if choice:
         rprint(f'[{w}]PLAYING:[/{w}] [{lg}]{qInfo}[/{lg}]')
     else:
-        if bool([i for i in video_quality if i.endswith('480')]) or bool([i for i in fList if '480p' in i]):
+        def ccc(q):
+            if not size:
+                return bool([i for i in fList if q in i])
+
+        if bool([i for i in video_quality if i.endswith('480')]) or ccc('480p'):
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]480p (DEFAULT)[/{lg}]')
-        elif bool([i for i in video_quality if i.endswith('360')]) or bool([i for i in fList if '360p' in i]):
+        elif bool([i for i in video_quality if i.endswith('360')]) or ccc('360p'):
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]360p[/{lg}]')
         else:
             rprint(f'[{w}]PLAYING:[/{w}] [{lg}]best[/{lg}]')
