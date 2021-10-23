@@ -312,7 +312,9 @@ def play(choice, size, mkv, video_quality, playonly):
             if choice:
                 if choice.count(choice[0]) == 2 and len(choice) == 2:
                     choice = choice[0]
-                    mkv = True
+                    cl = ['a', 'o', 'O', 'b', 'w', '1', '2', '3', '4', '7', '8', '9', '0']
+                    if choice in cl:
+                        mkv = True
 
         except KeyboardInterrupt:
             print(''); usr_err()
