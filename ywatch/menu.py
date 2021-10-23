@@ -393,8 +393,13 @@ def play(choice, size, mkv, video_quality, playonly):
         qPlay = f'{bq()}'
         choice = None
 
+    
     if choice:
-        rprint(f'[{w}]PLAYING:[/{w}] [{lg}]{qInfo}[/{lg}]')
+        if '[' in qInfo:
+            qInfo = qInfo.split('] ')
+            rprint(f'[{w}]PLAYING:[/{w}] {qInfo[0]}] [{lg}]{qInfo[1]}[/{lg}]')
+        else:
+            rprint(f'[{w}]PLAYING:[/{w}] [{lg}]{qInfo}[/{lg}]')
     else:
         def ccc(q):
             if not size:
