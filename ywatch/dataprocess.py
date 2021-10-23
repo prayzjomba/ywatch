@@ -216,6 +216,7 @@ class Read:
     def _opusBest(self):
         bOpus = re.findall('.*webm\s.*audio only.*', self.data) [-1]
         size = Read.size_check(self, bOpus, 'A')
+        qualito['best_opus'] = bOpus.split() [0]
         return size
     
     def _best(self):

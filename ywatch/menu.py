@@ -241,7 +241,7 @@ def checker(listt, size, item, name):
             return name
         else:
             if bool([i for i in listt if i.endswith('480')]):
-                return f'[s {r}]{name}[/s {r}] 480p'
+                return f'[s {r}]{name}[/s {r}] 480p (DEFAULT)'
             elif bool([i for i in listt if i.endswith('360')]):
                 return f'[s {r}]{name}[/s {r}] 360p'
             else:
@@ -252,7 +252,7 @@ def checker(listt, size, item, name):
             return name
         else:
             if bool([i for i in listt if '480p' in i]):
-                return f'[s {r}]{name}[/s {r}] 480p'
+                return f'[s {r}]{name}[/s {r}] 480p (DEFAULT)'
             elif bool([i for i in listt if '360p' in i]):
                 return f'[s {r}]{name}[/s {r}] 360p'
             else:
@@ -286,11 +286,17 @@ def play(choice, size, mkv, video_quality, playonly):
             if mkv:
                 qInfo = checker(video_quality, size, mkvC, name)
                 vid = video_quality.get(mkvC)
-                qPlay = f'{vid}+{opus}/{bq()}'
+                if name == 'm4a' or name == 'Opus' or name == 'Best Opus':
+                    qPlay = f'{vid}/{bq()}'
+                else:
+                    qPlay = f'{vid}+{opus}/{bq()}'
             else:
                 qInfo = checker(video_quality, size, mp4C, name)
                 vid = video_quality.get(mp4C)
-                qPlay = f'{vid}+{aac}/{bq()}'
+                if name == 'm4a' or name == 'Opus' or name == 'Best Opus':
+                    qPlay = f'{vid}/{bq()}'
+                else:
+                    qPlay = f'{vid}+{aac}/{bq()}'
         else:
             qInfo = checker(fList, size, name, name)
             qPlay = f'{LQ}/{bq()}'
@@ -321,24 +327,19 @@ def play(choice, size, mkv, video_quality, playonly):
             exit()
 
     if choice == 'a':
-        if aac:
-            qInfo = 'm4a'
-        else:
-            qInfo = f'[s {r}]m4a[/s {r}] 480p (DEFAULT)'
-        qPlay = aac
+        chkd = qqquality('aac', 'aac', 'm4a', '00')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
+
     elif choice == 'o':
-        if opus:
-            qInfo = 'Opus'
-        else:
-            qInfo = f'[s {r}]OPUS[/s {r}] 480p (DEFAULT)'
-        qPlay = opus
+        chkd = qqquality('opus', 'opus', 'Opus', '00')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == 'O':
-        if opus:
-            qInfo = 'Best Opus'
-        else:
-            qInfo = f'[s {r}]OPUS[/s {r}] 480p (DEFAULT)'
-        qPlay = 'bestaudio[ext=webm]'
+        chkd = qqquality('best_opus', 'best_opus', 'Best Opus', '00')
+        qInfo = chkd[0]
+        qPlay = chkd[1]
 
     elif choice == 'b':
         qInfo = 'Best'
