@@ -159,29 +159,30 @@ os.chdir(folder)
 x = 1
 
 #AUDIO DIR
-if user_q == 'a' or user_q == 'o' or user_q == 'O' and size_true:
-    if not os.path.isdir('Audio'):
-        os.makedirs('Audio') 
-    os.chdir('Audio')
+if user_q == 'a' or user_q == 'o' or user_q == 'O':
+    if size_true:
+        if not os.path.isdir('Audio'):
+            os.makedirs('Audio') 
+        os.chdir('Audio')
 
-    if user_q == 'a':
-        file = f'{title}.aac'
-        if os.path.isfile(file):
-            while os.path.isfile(f'{title}{x}.aac'):
-                x += 1
-            file = f'{title}{x}.aac'
-    elif user_q == 'o':
-        file = f'{title}.opus'
-        if os.path.isfile(file):
-            while os.path.isfile(f'{title}{x}.opus'):
-                x += 1
-            file = f'{title}{x}.opus'
-    else:
-        file = f'{title} (Best Opus).opus'
-        if os.path.isfile(file):
-            while os.path.isfile(f'{title}{x} (Best Opus).opus'):
-                x += 1
-            file = f'{title}{x} (Best Opus).opus'
+        if user_q == 'a':
+            file = f'{title}.aac'
+            if os.path.isfile(file):
+                while os.path.isfile(f'{title}{x}.aac'):
+                    x += 1
+                file = f'{title}{x}.aac'
+        elif user_q == 'o':
+            file = f'{title}.opus'
+            if os.path.isfile(file):
+                while os.path.isfile(f'{title}{x}.opus'):
+                    x += 1
+                file = f'{title}{x}.opus'
+        else:
+            file = f'{title} (Best Opus).opus'
+            if os.path.isfile(file):
+                while os.path.isfile(f'{title}{x} (Best Opus).opus'):
+                    x += 1
+                file = f'{title}{x} (Best Opus).opus'
 
 elif userIn.mkv:
     file = f'{title}.mkv'
