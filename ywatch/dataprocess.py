@@ -267,6 +267,9 @@ class Read:
         bestV = re.findall('.*webm.*', self.data) [-1]
         size = Read.size_check(self, bestV, 'B')
         bestq = bestV.split() [3]
+        if bestq == 'DASH':
+            bestq = bestV.split() [2].split('x') [1]
+            bestq = f'{bestq}p'
         return [size, bestq]
 
 
