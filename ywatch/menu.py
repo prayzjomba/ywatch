@@ -1,5 +1,5 @@
 # MENU by (Prayz Jomba)
-# last updated(18 Sep 2021) 04:43:28 PM
+# last updated(24 Oct 2021) 02:56:19 PM
 
 
 from rich.panel import Panel
@@ -235,29 +235,35 @@ def liveFormats(formats):
 
 
 def checker(listt, size, item, name):
+    def qnf(n):
+        qnotf = f'[s {r}]{name}[/s {r}]'
+        if item == '':
+            return f'[{lg}]{n}[/{lg}]'
+        else:
+            return f'{qnotf} [{lg}]{n}[/{lg}]'
+
     if size:
         result = bool([i for i in listt if i.endswith(item)])
-        if result:
-            return name
+        if result and item != '':
+            return f'[{lg}]{name}[/{lg}]'
         else:
             if bool([i for i in listt if i.endswith('480')]):
-                return f'[s {r}]{name}[/s {r}] 480p (DEFAULT)'
+                return qnf('480p (DEFAULT)')
             elif bool([i for i in listt if i.endswith('360')]):
-                return f'[s {r}]{name}[/s {r}] 360p'
+                return qnf('360p')
             else:
-                return f'[s {r}]{name}[/s {r}] best'
+                return qnf('best')
     else:
         result = bool([i for i in listt if item in i])
-        if result:
-            return name
+        if result and item != '':
+            return f'[{lg}]{name}[/{lg}]'
         else:
             if bool([i for i in listt if '480p' in i]):
-                return f'[s {r}]{name}[/s {r}] 480p (DEFAULT)'
+                return qnf('480p (DEFAULT)')
             elif bool([i for i in listt if '360p' in i]):
-                return f'[s {r}]{name}[/s {r}] 360p'
+                return qnf('360p')
             else:
-                return f'[s {r}]{name}[/s {r}] best'
-
+                return qnf('best')
 
 
 def play(choice, size, mkv, video_quality, playonly):
@@ -396,22 +402,11 @@ def play(choice, size, mkv, video_quality, playonly):
 
     
     if choice:
-        if '[' in qInfo:
-            qInfo = qInfo.split('] ')
-            rprint(f'[{w}]PLAYING:[/{w}] {qInfo[0]}] [{lg}]{qInfo[1]}[/{lg}]')
-        else:
-            rprint(f'[{w}]PLAYING:[/{w}] [{lg}]{qInfo}[/{lg}]')
+        rprint(f'[{w}]PLAYING:[/{w}] {qInfo}')
     else:
-        def ccc(q):
-            if not size:
-                return bool([i for i in fList if q in i])
-
-        if bool([i for i in video_quality if i.endswith('480')]) or ccc('480p'):
-            rprint(f'[{w}]PLAYING:[/{w}] [{lg}]480p (DEFAULT)[/{lg}]')
-        elif bool([i for i in video_quality if i.endswith('360')]) or ccc('360p'):
-            rprint(f'[{w}]PLAYING:[/{w}] [{lg}]360p[/{lg}]')
-        else:
-            rprint(f'[{w}]PLAYING:[/{w}] [{lg}]best[/{lg}]')
+        chkd = qqquality('', '', '', '')
+        qInfo = chkd[0]
+        rprint(f'[{w}]PLAYING:[/{w}] {qInfo}')
 
     if not playonly:
         if size:
