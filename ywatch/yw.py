@@ -166,11 +166,11 @@ if user_q == 'a' or user_q == 'o' or user_q == 'O':
         os.chdir('Audio')
 
         if user_q == 'a':
-            file = f'{title}.aac'
+            file = f'{title}.m4a'
             if os.path.isfile(file):
-                while os.path.isfile(f'{title}{x}.aac'):
+                while os.path.isfile(f'{title}{x}.m4a'):
                     x += 1
-                file = f'{title}{x}.aac'
+                file = f'{title}{x}.m4a'
         elif user_q == 'o':
             file = f'{title}.opus'
             if os.path.isfile(file):
