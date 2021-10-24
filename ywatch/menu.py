@@ -354,6 +354,9 @@ def play(choice, size, mkv, video_quality, playonly):
         else:
             qPlay = 'best'
 
+    elif choice == 'c':
+        print('') ; exit()
+
     elif choice == 'w': 
         qInfo = f'[{r}]Worst[/{r}]'
         if mkv:
