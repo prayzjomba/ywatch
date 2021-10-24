@@ -1,5 +1,5 @@
 # MENU by (Prayz Jomba)
-# last updated(24 Oct 2021) 02:56:19 PM
+# last updated(24 Oct 2021) 03:52:19 PM
 
 
 from rich.panel import Panel
@@ -334,18 +334,15 @@ def play(choice, size, mkv, video_quality, playonly):
 
     if choice == 'a':
         chkd = qqquality('aac', 'aac', 'm4a', '00')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == 'o':
         chkd = qqquality('opus', 'opus', 'Opus', '00')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == 'O':
         chkd = qqquality('best_opus', 'best_opus', 'Best Opus', '00')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == 'b':
         qInfo = f'[{lg}]Best[/{lg}]'
@@ -366,38 +363,31 @@ def play(choice, size, mkv, video_quality, playonly):
 
     elif choice == '1' or choice == '8':
         chkd = qqquality('mkv_1080', 'mp4_1080', '1080p', '96')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == '2': 
         chkd = qqquality('mkv_240', 'mp4_240', '240p', '92')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == '3': 
         chkd = qqquality('mkv_360', 'mp4_360', '360p', '93')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == '4': 
         chkd = qqquality('mkv_480', 'mp4_480', '480p', '94')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == '7':
         chkd = qqquality('mkv_720', 'mp4_720', '720p', '95')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == '9':
         chkd = qqquality('mkv_1440', 'mp4_1440', '1440p', '00')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     elif choice == '0':
         chkd = qqquality('mkv_2160', 'mp4_2160', '2160p', '00')
-        qInfo = chkd[0]
-        qPlay = chkd[1]
+        qInfo = chkd[0] ; qPlay = chkd[1]
 
     else: 
         qPlay = f'{bq()}'
