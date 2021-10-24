@@ -348,9 +348,9 @@ def play(choice, size, mkv, video_quality, playonly):
         qPlay = chkd[1]
 
     elif choice == 'b':
-        qInfo = 'Best'
+        qInfo = f'[{lg}]Best[/{lg}]'
         if mkv:
-            qPlay = 'bestvideo[ext=webm]+bestaudio[ext=webm]'
+            qPlay = 'bestvideo[ext=webm]+bestaudio[ext=webm]/best'
         else:
             qPlay = 'best'
 
