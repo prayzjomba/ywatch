@@ -323,6 +323,7 @@ def play(choice, size, mkv, video_quality, playonly):
                         userC = rinput(f'[{w}]QUALITY:[{b}](mkv)[/{b}][{ly}] > ')
                     else:
                         userC = rinput(f'[{w}]QUALITY:[{b}](twice for mkv)[/{b}][{ly}] > ')
+                    return userC
                 choice = func_timeout(20, lambda: userChoice())
             except FunctionTimedOut:
                 print('')
