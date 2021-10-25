@@ -319,7 +319,7 @@ def stream(link, quality, file, resume, playonly, fs):
     try:
         if playonly:
             rec     = ''
-            stream  = subprocess.run(['mpv', f'--ytdl-format={quality}/best', link, fs, resume, '--loop-playlist=no', rec, '--player-operation-mode=pseudo-gui', '--autofit-larger=70%x70%'])
+            stream  = subprocess.run(['mpv', f'--ytdl-format={quality}/best', link, fs, resume, '--loop-playlist=no', rec, '--player-operation-mode=pseudo-gui', '--autofit-larger=30%'])
             if stream.returncode != 0:
                 print(''); menu.con_err()
             else:
@@ -327,7 +327,7 @@ def stream(link, quality, file, resume, playonly, fs):
             exit()
         else:
             rec     = f'--stream-record={file}'
-            stream  = subprocess.Popen(['mpv', f'--ytdl-format={quality}/best', link, fs, resume, '--loop-playlist=no', rec, '--player-operation-mode=pseudo-gui', '--autofit-larger=70%x70%'])
+            stream  = subprocess.Popen(['mpv', f'--ytdl-format={quality}/best', link, fs, resume, '--loop-playlist=no', rec, '--player-operation-mode=pseudo-gui', '--autofit-larger=30%'])
 
             #WAITING..
             x = 0
