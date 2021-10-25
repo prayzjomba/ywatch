@@ -323,7 +323,7 @@ def stream(link, quality, file, resume, playonly, fs):
             if stream.returncode != 0:
                 print(''); menu.con_err()
             else:
-                print('\n')
+                print('')
             exit()
         else:
             rec     = f'--stream-record={file}'
