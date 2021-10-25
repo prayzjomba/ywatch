@@ -405,7 +405,9 @@ def play(choice, size, mkv, video_quality, playonly):
         qInfo = chkd[0]
         rprint(f'[{w}]PLAYING:[/{w}] {qInfo}')
 
-    if not playonly:
+    if playonly:
+        rprint(f'[{br}]PLAYONLY:[/{br}] [{lg}]Enabled[/{lg}]')
+    else:
         if size:
             if choice == 'o' or choice == 'O':
                 rprint(f'[{w}]OUTPUT:[/{w}] [{b}]opus[/{b}]')
