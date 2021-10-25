@@ -355,7 +355,7 @@ def stream(link, quality, file, resume, playonly, fs):
 
     except KeyboardInterrupt:
         print(''); menu.usr_err()
-        if not playonly: stream.kill()
+        if not playonly: stream.terminate()
         exit()
 
 
