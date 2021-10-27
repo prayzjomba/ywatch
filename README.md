@@ -6,7 +6,7 @@
 
 * **install using aur**
   * **`yay -S ywatch-git`**
-  * if you get this *error* install **`archlinux-keyring`** then run again **`makepkg -si`**
+  * if you get this *error* install **`archlinux-keyring`** 
 ![error](https://github.com/prayzjomba/kajhdfhakldfl/blob/main/sc/error.png)
 
 * **install using pip**
