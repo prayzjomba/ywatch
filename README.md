@@ -4,7 +4,7 @@
 
 ### Instalation
 
-* **install using aur**
+* **install from aur**
   * **`yay -S ywatch-git`**
   * if you get this *error* install **`archlinux-keyring`** 
 ![error](https://github.com/prayzjomba/kajhdfhakldfl/blob/main/sc/error.png)
