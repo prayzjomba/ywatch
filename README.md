@@ -8,9 +8,11 @@
   * **`git clone https://github.com/prayzjomba/ywatch.git`**
   * **`cd ywatch`**
   * **`makepkg -si`**
+  * if you get this *error* install **`archlinux-keyring`** then run again **`makepkg -si`**
+![error](https://github.com/prayzjomba/kajhdfhakldfl/blob/main/sc/error.png)
 
 * **install using pip**
-  + check if _**$HOME/.local/bin**_ is in *PATH* by running **`echo $PATH`**
+  + check if **$HOME/.local/bin** is in *PATH* by running **`echo $PATH`**
   + if not add this line to your **bashrc** **`export PATH=$HOME/.local/bin:$PATH`**
 
   * ##### ubuntu/debian users:
