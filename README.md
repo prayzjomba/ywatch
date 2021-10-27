@@ -4,10 +4,8 @@
 
 ### Instalation
 
-* **install using makepkg**
-  * **`git clone https://github.com/prayzjomba/ywatch.git`**
-  * **`cd ywatch`**
-  * **`makepkg -si`**
+* **install using aur**
+  * **`yay -S ywatch-git`**
   * if you get this *error* install **`archlinux-keyring`** then run again **`makepkg -si`**
 ![error](https://github.com/prayzjomba/kajhdfhakldfl/blob/main/sc/error.png)
 
