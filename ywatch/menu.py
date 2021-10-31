@@ -82,7 +82,8 @@ def duration_asize(duration, aac, opus):
     #print(len(A))
 
     #dur_len
-    if   len(duration) == 107: duration += '        '
+    if   len(duration) == 104: duration += '           '
+    elif len(duration) == 107: duration += '        '
     elif len(duration) == 108: duration += '       '
     elif len(duration) == 110: duration += '     '
     elif len(duration) == 111: duration += '    '
