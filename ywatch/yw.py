@@ -94,7 +94,7 @@ def stream():
 
 # CLEAR SCREEN
 if not userIn.disable_clear: #-c
-    os.system('clear')
+    os.system('clear -x')
 
 # CONDITIONS
 if not os.path.isfile(dataFile):
